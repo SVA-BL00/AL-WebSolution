@@ -1,4 +1,4 @@
-from flask import render_template, Blueprint, session, flash, redirect, url_for, request
+from flask import render_template, Blueprint, session, flash, redirect, url_for, request, flash
 import os
 import string, secrets, smtplib
 from email.mime.multipart import MIMEMultipart
@@ -69,3 +69,12 @@ def login_post():
         return redirect(url_for('/'))
     #flash(error)
     return redirect(url_for('login_get'))
+
+""" @views.route('/registro', methods=['GET,POST'])
+def register():
+    if request.method=='POST':
+        #Se recupera la información del forms
+        passw = generate_random_password()
+        passwAc = generate_password_hash(passw)
+        flash('Registro exitoso, el correo con tu contraseña ha sido enviado!', 'success')
+        #send_email(correo,passw) """
