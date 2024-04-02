@@ -2,6 +2,36 @@
 {% block content%}
 <div class="background">
     <div class="full-container">
+        <div class="form-box">
+            <img src="../static/img/LOGO.png" alt="Logotipo de Augmented Labs" class= "LOGIN-style">
+            <div class="form-value">
+                <form method="POST">
+                    <div class="input">
+                        <span class="material-symbols-outlined">
+                            mail
+                        </span>
+                        <input class="input-login" type="email" required name = "userMail" id = "userMail">
+                        <label for="userMail">Correo electrónico</label>
+                    </div>
+                    <div class="input">
+                        <span class="material-symbols-outlined">
+                            lock
+                        </span>
+                        <input class="input-login" type="password" required name="password" id="password">
+                        <label for="password">Contraseña</label>
+                    </div>
+                    <div class="submit">
+                        <button type = "submit">Iniciar sesión</button>
+                    </div>  
+                </form>
+                <a href="#" style="color: rgb(146, 45, 45); padding-top: 1.5em; font-size: small;">¿Te olvidaste de tu contraseña?</a>
+            </div>
+        </div>
+    </div>
+</div>
+<!--
+<div class="background">
+    <div class="full-container">
         <div class="login-window">
             <img src="../static/img/LOGO.png" alt="Logotipo de Augmented Labs" class= "LOGIN-style">
             <div class="shadow">
@@ -29,4 +59,5 @@
         </div>
     </div>
 </div>
+-->
 {% endblock %}
