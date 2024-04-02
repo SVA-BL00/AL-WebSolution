@@ -24,13 +24,7 @@ pip install Flask
 pip install python-dotenv
 ```
 
-5. Instalar pytest
-
-```bash
-pip install pytest
-```
-
-6. Correr aplicación
+5. Correr aplicación
 
 ```bash
 flask --app flaskr run --debug
