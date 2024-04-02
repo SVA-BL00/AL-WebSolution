@@ -2,7 +2,6 @@
 *{
     margin: 0;
     padding: 0;
-    font-family: 'poppins',sans-serif;
 }
 
 /* admin view */
@@ -15,6 +14,8 @@
     background: url(../img/background_login.jpg) no-repeat;
     background-position: center;
     background-size: cover;
+
+    font-family: 'poppins',sans-serif;
 }
 .form-box {
     position: relative;
@@ -63,6 +64,7 @@
     font-size: 1em;
     padding: 0 35px 0 5px;
     color: white;
+    font-family: 'poppins',sans-serif;
 }
 .input span {
     position: absolute;

@@ -70,6 +70,10 @@ def login_post():
     #flash(error)
     return redirect(url_for('login_get'))
 
+@views.route("/xd")
+def prueba():
+    return render_template("admin.html")
+
 """ @views.route('/registro', methods=['GET,POST'])
 def register():
     if request.method=='POST':
