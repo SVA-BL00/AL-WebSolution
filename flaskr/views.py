@@ -1,8 +1,34 @@
 from flask import render_template, Blueprint, session, flash, redirect, url_for, request
+import os
+import string, secrets, smtplib
+from email.mime.multipart import MIMEMultipart
+from email.mime.text import MIMEText
 from werkzeug.security import check_password_hash, generate_password_hash
 import functools
 
 views = Blueprint('views', __name__)
+
+## CREACIÓN DE CREDENCIALES PARA USUARIO ##
+
+def send_email(email, password):
+    subject = 'Tu información de acceso'
+    body = f'\nTu contraseña: {password}'
+
+    message = MIMEMultipart()
+    message['From'] = os.getenv('EMAIL_ADDRESS')
+    message['To'] = email
+    message['Subject'] = subject
+    message.attach(MIMEText(body, 'plain'))
+
+    with smtplib.SMTP(os.getenv('SMTP_SERVER'), os.getenv('SMTP_PORT')) as server:
+        server.starttls()
+        server.login(os.getenv('EMAIL_ADDRESS'), os.getenv('APP_PASSWORD'))
+        server.sendmail(os.getenv('EMAIL_ADDRESS'), email, message.as_string())
+
+def generate_random_password():
+    alphabet = string.ascii_letters + string.digits
+    password = ''.join(secrets.choice(alphabet) for i in range(8))
+    return password
 
 def login_required(view):
     @functools.wraps(view)
