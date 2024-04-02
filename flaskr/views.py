@@ -21,9 +21,7 @@ def home():
 
 @views.get("/login")
 def login_get():
-    return render_template(
-        "login.html"
-    )
+    return render_template("login.html")
 
 @views.post("/login")
 def login_post():

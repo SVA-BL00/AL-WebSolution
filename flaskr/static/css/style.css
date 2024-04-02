@@ -7,10 +7,12 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    height: 100%;
+    flex-direction: column;
 }
 
 .background{
-    background: linear-gradient(50deg, #ffe373, #8b2b5b);
+    background: linear-gradient(50deg, #a0eaf2, #796fe2);
     animation: Gradient 30s ease infinite;
     position: relative;
     height: 100vh;
@@ -32,7 +34,20 @@
 }
 
 .login-window{
-    max-width: 40vw;
-    max-height: 70vh;
-    background-color: rgb(255, 255, 255);
+    width: 300px;
+    height: 300px;
+}
+.LOGIN-style{
+    padding-bottom: 1em;
+    width: 100%;
+}
+
+.shadow{
+    background-color: rgba(255, 255, 255, 0.544);
+    padding: 2em;
+    border-radius: 20px;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
 }
