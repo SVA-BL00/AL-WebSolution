@@ -1,0 +1,81 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'poppins',sans-serif;
+}
+
+/* admin view */
+.add-user {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    width: 100%;
+    background: darkblue;
+    background-position: center;
+    background-size: cover;
+}
+.form-box {
+    position: relative;
+    width: 400px;
+    height: 450px;
+    background: rgba(255, 255, 255, 0.3);
+    border: 2px solid rgba(255, 255, 255, 1);
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.form-value h2{
+    text-align: center;
+    font-size: 2em;
+}
+.form-value .submit {
+    margin-top: 10px;
+    text-align: center;
+}
+.input {
+    position: relative;
+    margin: 30px;
+    width: 310px;
+    border-bottom: 2px solid white;
+}
+.input label {
+    position: absolute;
+    top: 50%;
+    left: 5px;
+    transform: translateY(-50%);
+    font-size: 1em;
+    pointer-events: none;
+    transition: 0.5s;
+}
+input:focus ~ label, input:valid ~ label {
+    top: -5px;
+}
+.input input {
+    width: 100%;
+    height: 50px;
+    background: transparent;
+    border: none;
+    outline: none;
+    font-size: 1em;
+    padding: 0 35px 0 5px;
+}
+.input span {
+    position: absolute;
+    right: 8px;
+    font-size: 1.2em;
+    top: 20px;
+}
+.submit button {
+    width: 100%;
+    height: 40px;
+    border-radius: 40px;
+    background: white;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    font-size: 1em;
+    font-weight: 600;
+}
