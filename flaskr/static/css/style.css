@@ -1,6 +1,7 @@
 *{
     margin: 0;
     padding: 0;
+    font-family: "Rubik", sans-serif;
 }
 
 .full-container{
@@ -35,10 +36,10 @@
 
 .login-window{
     width: 300px;
-    height: 300px;
+    height: 500px;
 }
+
 .LOGIN-style{
-    padding-bottom: 1em;
     width: 100%;
 }
 
@@ -50,4 +51,30 @@
     align-items: center;
     display: flex;
     flex-direction: column;
+    height: 200px;
+}
+
+form{
+    overflow: hidden;
+}
+
+input{
+    padding: 0.5em;
+    margin-bottom: 0.5em;
+    width: 100%;
+    display:inline-block;
+}
+
+button{
+    width: 100%;
+    padding: 0.5em;
+    background-color: #473eb0;
+    border-radius: 20px;
+    border-color: white;
+    color: white;
+}
+
+button:hover{
+    background-color: #2c247c;
+    cursor: pointer;
 }
