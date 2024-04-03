@@ -1,16 +1,28 @@
 {% extends "base.html" %}
-{% block content%}
+{% block content %}
 <div class="background">
     <div class="full-container">
         <div class="form-box">
             <img src="../static/img/LOGO.png" alt="Logotipo de Augmented Labs" class= "LOGIN-style">
             <div class="form-value">
+                <!-- Display flash messages -->
+                {% with messages = get_flashed_messages(with_categories=true) %}
+                    {% if messages %}
+                        {% for category, message in messages %}
+                            <div class="alert alert-{{ category }}">
+                                {{ message }}
+                            </div>
+                        {% endfor %}
+                    {% endif %}
+                {% endwith %}
+
+                <!-- Login form -->
                 <form method="POST">
                     <div class="input">
                         <span class="material-symbols-outlined">
                             mail
                         </span>
-                        <input class="input-login" type="email" required name = "userMail" id = "userMail">
+                        <input class="input-login" type="email" required name="userMail" id="userMail">
                         <label for="userMail">Correo electrónico</label>
                     </div>
                     <div class="input">
@@ -21,10 +33,9 @@
                         <label for="password">Contraseña</label>
                     </div>
                     <div class="submit">
-                        <button type = "submit">Iniciar sesión</button>
+                        <button type="submit">Iniciar sesión</button>
                     </div>
                 </form>
-                
             </div>
         </div>
     </div>
