@@ -18,7 +18,7 @@ def create_app():
                 f"DRIVER=ODBC Driver 18 for SQL Server;"
                 f"SERVER={os.getenv('DB_SERVER')};"
                 f"DATABASE={os.getenv('DB_NAME')};"
-                f"UID={os.getenv('DB_USER')};"
+                f"UID={os.getenv('DB_USERNAME')};"
                 f"PWD={os.getenv('DB_PASSWORD')}"
             )
             return conn
@@ -31,7 +31,7 @@ def create_app():
         conn = get_db_connection()
         if conn:
             cursor = conn.cursor()
-            cursor.execute("SELECT COUNT(*) FROM Usuarios")
+            cursor.execute("SELECT COUNT(*) FROM Employees")
             count = cursor.fetchone()[0]
             conn.close()
             return f"Total records in database: {count}"
