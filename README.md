@@ -24,8 +24,17 @@ pip install Flask
 pip install python-dotenv
 ```
 
-5. Correr aplicación
+5. Instalar pyodbc
+```bash
+pip install pyodbc
+```
+
+6. Correr aplicación
 
 ```bash
 flask --app flaskr run --debug
 ```
+
+## Importante
+
+Checar que se tenga el driver de odbc version 18.
