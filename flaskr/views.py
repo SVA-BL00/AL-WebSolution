@@ -9,42 +9,39 @@ views = Blueprint('views', __name__)
 def home():
     return render_template("main.html")
 
-@views.route("/login", methods=['GET', 'POST'])
-def login():
-    if request.method == 'POST':
-        # Process form submission
-        usermail = request.form.get('userMail')
-        password = request.form.get('password')
-
-        conn = get_db_connection()
-        if not conn:
-            flash("Failed to connect to database", 'error')
-            return redirect(url_for('views.login'))
-
-        try:
-            cursor = conn.cursor()
-            cursor.execute("SELECT * FROM Employees WHERE Email = ?", (usermail,))
-            user = cursor.fetchone()
-
-            if user and user[5] == password:  
-                session.clear()
-                session['USER_ID'] = user[0]  
-                session.permanent = True
-                flash('¡Has ingresado correctamente!', 'success')
-                return redirect(url_for('views.home'))
-
-
-            else:
-                flash('Usuario o contraseña incorrectos', 'error')
-        except Exception as e:
-            flash('Error al intentar iniciar sesión', 'error')
-            print(f"Error: {e}")
-        finally:
-            conn.close()
-
-    # Render login form
+@views.get('/login')
+def loginGET():
     return render_template("login.html")
 
+@views.post('/login')
+def loginPOST():
+    usermail = request.form.get('userMail')
+    password = request.form.get('password')
+
+    conn = get_db_connection()
+    if not conn:
+        flash("Failed to connect to database", 'error')
+        return redirect(url_for('loginGET'))
+
+    try:
+        cursor = conn.cursor()
+        cursor.execute("SELECT * FROM Employees WHERE Email = ?", (usermail,))
+        user = cursor.fetchone()
+
+        if user and user[5] == password:  
+            session.clear()
+            session['USER_ID'] = user[0]  
+            session.permanent = True
+            flash('¡Has ingresado correctamente!', 'success')
+            return redirect(url_for('views.home'))
+        else:
+            flash('Usuario o contraseña incorrectos', 'error')
+    except Exception as e:
+        flash('Error al intentar iniciar sesión', 'error')
+        print(f"Error: {e}")
+    finally:
+        conn.close()
+    return render_template("login.html")    
 
 @views.route("/search")
 def search():
