@@ -5,12 +5,14 @@ let right = document.querySelector('#right');
 let left = document.querySelector('#left');
 let up = document.querySelector('#up');
 let down = document.querySelector('#down');
+let maria = document.querySelector('#maria')
 imagen.src = "../static/img/" + route;
 contenedor.appendChild(imagen);
 right.style.opacity = 1;
 left.style.opacity = 0;
 up.style.opacity = 0;
 down.style.opacity = 0;
+maria.style.opacity = 0;
 
 function move(str) {
     console.log(str);
@@ -20,6 +22,7 @@ function move(str) {
         left.style.opacity = 0;
         up.style.opacity = 1;
         down.style.opacity = 0;
+        maria.style.opacity = 1;
     }
     if (route == 'Scene2.jpg' && str == 'up') {
         route = 'Scene1.jpg';
@@ -27,6 +30,7 @@ function move(str) {
         left.style.opacity = 0;
         up.style.opacity = 0;
         down.style.opacity = 0;
+        maria.style.opacity = 0;
     }
     imagen.src = "../static/img/" + route;
 }

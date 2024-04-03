@@ -184,4 +184,30 @@ input:valid ~ label {
     margin-left: 48.5vw;
     margin-top: 89vh;
 }
+
+#maria {
+    position: absolute;
+    font-size: 60px;
+    background: rgba(190, 118, 118, 0.75);
+    border-radius: 50px;
+    user-select: none;
+    margin-left: 30px;
+    margin-bottom: 20px;
+} #maria:hover ~ table {
+    opacity: 1;
+}
+
+thead {
+    background-color: rgb(123, 144, 207);
+} tbody {
+    background-color: rgb(34, 34, 34);
+    color: white;
+} table {
+    border: 1px solid black;
+    border-collapse: collapse;
+    position: absolute;
+    margin-left: 350px;
+    margin-top: 150px;
+    opacity: 0;
+}
 /* transform: rotate(45deg); */
