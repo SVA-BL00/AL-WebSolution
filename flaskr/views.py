@@ -33,3 +33,16 @@ def login_post():
         return redirect(url_for('/'))
     #flash(error)
     return redirect(url_for('login_get'))
+
+@views.route("/search")
+def search():
+    q = request.args.get("q")
+    print(q)
+
+    if q:
+        print(q)
+        #Nombre del table.query.filter(nombretable.nombre.icontains(q) | nombretable.nombre.icontains(q)).order_by(nombre.idk.asc()).order_by(asdasd)).limit(10).all
+    else:
+        results = []
+    
+    return render_template("search_results.html", results=results)
