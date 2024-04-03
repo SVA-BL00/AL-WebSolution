@@ -1,0 +1,67 @@
+.sidenav {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #4c3f76;
+  overflow-x: hidden;
+  padding-top: 60px;
+  transition: 0.5s;
+}
+  
+
+.sidenav a {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #8a8a8a;
+  display: block;
+  transition: 0.3s;
+}
+  
+.sidenav a:hover {
+  color: #f1f1f1;
+}
+  
+.sidenav .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+}
+  
+#main {
+  transition: margin-left .5s;
+  padding: 20px;
+}
+  
+
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+}
+
+.hamburger{
+  font-size: 2em !important;
+  padding-left:0.5em;
+  padding-top:0.5em;
+}
+
+.title-page{
+  text-shadow: -1px 2px 35px rgba(0,0,0,1);
+  text-align: center;
+  color: white;
+}
+
+.extra{
+  color: rgb(209, 209, 209) !important;
+  padding-left: 0 !important;
+}
+
+.tabla-ubi{
+  padding-left: 1.5em;
+  color:white;
+}

@@ -1,25 +1,117 @@
-*{
+
+* {
     margin: 0;
     padding: 0;
     font-family: "Rubik", sans-serif;
 }
 
-.full-container{
+/* Admin view */
+.add-user {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100%;
-    flex-direction: column;
+    min-height: 100vh;
+    width: 100%;
+    background: darkblue;
+    background-position: center;
+    background-size: cover;
+    font-family: 'Poppins', sans-serif;
 }
 
-.background{
+.form-box {
+    position: relative;
+    width: 400px;
+    height: 450px;
+    background: rgba(255, 255, 255, 0.3);
+    border: 2px solid rgba(255, 255, 255, 1);
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.form-value h2 {
+    text-align: center;
+    font-size: 2em;
+}
+
+.form-value .submit {
+    margin-top: 10px;
+    text-align: center;
+}
+
+.input {
+    position: relative;
+    margin: 30px;
+    width: 310px;
+    border-bottom: 2px solid white;
+}
+
+.input label {
+    position: absolute;
+    top: 50%;
+    left: 5px;
+    transform: translateY(-50%);
+    font-size: 1em;
+    pointer-events: none;
+    transition: 0.5s;
+}
+
+input:focus ~ label,
+input:valid ~ label {
+    top: -5px;
+}
+
+.input input {
+    width: 100%;
+    height: 50px;
+    background: transparent;
+    border: none;
+    outline: none;
+    font-size: 1em;
+    padding: 0 35px 0 5px;
+    font-family: 'Poppins', sans-serif;
+}
+
+.input span {
+    position: absolute;
+    right: 8px;
+    font-size: 1.2em;
+    top: 20px;
+}
+
+.submit button {
+    width: 100%;
+    height: 40px;
+    border-radius: 40px;
+    background: white;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    font-size: 1em;
+    font-weight: 600;
+}
+
+/* Login view */
+.full-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    width: 100%;
+    font-family: "Rubik", sans-serif;
+}
+
+.background {
     background: linear-gradient(50deg, #a0eaf2, #796fe2);
     animation: Gradient 30s ease infinite;
-    position: relative;
-    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
     width: 100%;
-    overflow: hidden;
-    background-size: 400% 400%;
+    background-position: center;
+    background-size: cover;
 }
 
 @keyframes Gradient {
@@ -34,45 +126,25 @@
     }
 }
 
-.login-window{
-    width: 300px;
-    height: 500px;
+.LOGIN-style {
+    position: absolute;
+    width: 60%;
+    transform: translateY(-125%);
 }
 
-.LOGIN-style{
-    width: 100%;
-}
-
-.shadow{
-    background-color: rgba(255, 255, 255, 0.544);
-    padding: 2em;
+.form-box-login {
+    position: relative;
+    width: 400px;
+    height: 450px;
+    background: rgba(255, 255, 255, 0.3);
+    border: 2px solid rgba(255, 255, 255, 1);
     border-radius: 20px;
+    display: flex;
     justify-content: center;
     align-items: center;
-    display: flex;
-    flex-direction: column;
-    height: 200px;
 }
 
-.input {
-    position: relative;
-    margin: 30px;
-    width: 310px;
-    border-bottom: 2px solid white;
-}
-.input label {
-    position: absolute;
-    top: 50%;
-    left: 5px;
-    transform: translateY(-50%);
-    font-size: 1em;
-    pointer-events: none;
-    transition: 0.5s;
-}
-input:focus ~ label, input:valid ~ label {
-    top: -5px;
-}
-.input input {
+.input .input-login {
     width: 100%;
     height: 50px;
     background: transparent;
@@ -80,15 +152,5 @@ input:focus ~ label, input:valid ~ label {
     outline: none;
     font-size: 1em;
     padding: 0 35px 0 5px;
-}
-.input span {
-    position: absolute;
-    right: 8px;
-    font-size: 1.2em;
-    top: 20px;
-}
-
-submit:hover{
-    background-color: #2c247c;
-    cursor: pointer;
+    font-family: "Rubik", sans-serif;
 }

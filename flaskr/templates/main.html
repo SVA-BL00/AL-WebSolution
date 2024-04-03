@@ -1,0 +1,25 @@
+{% extends "base.html"%}
+{% block content%}
+<div class="sidenav" id="sidenav">
+    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+    <div class="input">
+        <span class="material-symbols-outlined">
+            search
+        </span>
+        <input class = "extra" type="text" placeholder="¿Qué área estás buscando?" name="q" hx-get="/search" hx-trigger="keyup changed delay:500ms" hx-target="#results">
+    </div>
+    <table class="tabla-ubi">
+        <thead>
+            <tr>
+                <th>Nombre de área</th>
+            </tr>
+        </thead>
+        <tbody id="results">
+
+        </tbody>
+    </table>
+</div>
+<span onclick="openNav()" class="material-symbols-outlined hamburger">Menu</span>
+
+<h1 class="title-page">Nombre de ubicación</h1>
+{% endblock %}
