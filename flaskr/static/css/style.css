@@ -154,3 +154,11 @@ input:valid ~ label {
     padding: 0 35px 0 5px;
     font-family: "Rubik", sans-serif;
 }
+
+/* streetView */
+.camera-box {
+    width: 729px;
+    height: 410px;
+    border: solid;
+    border-color: black;
+}
