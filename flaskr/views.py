@@ -5,6 +5,7 @@ from email.mime.multipart import MIMEMultipart
 from email.mime.text import MIMEText
 from werkzeug.security import check_password_hash, generate_password_hash
 import functools
+from . import get_db_connection
 
 views = Blueprint('views', __name__)
 
@@ -51,24 +52,34 @@ def login_get():
 
 @views.post("/login")
 def login_post():
-    username = request.form['username']
+    email = request.form['usermail']
     password = request.form['password']
-    # cambiar con función de db / db = get_db()
-    error = None
-    # user = obten_usuario(db, username)
-    #if user is None:
-    #    error = 'Usuario incorrecto.'
-    # elif not check_password_hash(user['contrasena'], password):
-    #   error = 'Contraseña incorrecta.'
+    
+    conn = get_db_connection()
+    if not conn:
+        flash("Failed to connect to database")
+        return redirect(url_for('views.login_get'))
+    
+    try:
+        cursor = conn.cursor()
+        cursor.execute("SELECT * FROM users WHERE email = ?", (email,))
+        user = cursor.fetchone()
 
-    if error is None:
-        session.clear()
-        ## session['USER_ID'] = user['usuario_id']
-        session.permanent = True
-        flash('¡Has ingresado correctamente!')
-        return redirect(url_for('/'))
-    #flash(error)
-    return redirect(url_for('login_get'))
+        if user and check_password_hash(user['password'], password):
+            session.clear()
+            session['USER_ID'] = user['usuario_id']
+            session.permanent = True
+            flash('¡Has ingresado correctamente!')
+            return redirect(url_for('views.home'))
+        else:
+            flash('Usuario o contraseña incorrectos', 'error')
+            return redirect(url_for('views.login_get'))
+    except Exception as e:
+        flash('Error al intentar iniciar sesión', 'error')
+        print(f"Error: {e}")
+        return redirect(url_for('views.login_get'))
+    finally:
+        conn.close()
 
 @views.route("/xd")
 def prueba():
