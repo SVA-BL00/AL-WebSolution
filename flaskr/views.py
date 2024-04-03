@@ -1,5 +1,4 @@
 from flask import render_template, Blueprint, session, flash, redirect, url_for, request
-from werkzeug.security import check_password_hash, generate_password_hash
 import functools
 from . import get_db_connection
 
