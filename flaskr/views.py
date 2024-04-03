@@ -1,6 +1,6 @@
 from flask import render_template, Blueprint, session, flash, redirect, url_for, request
 import functools
-from . import get_db_connection
+from .db import get_db_connection
 
 views = Blueprint('views', __name__)
 
