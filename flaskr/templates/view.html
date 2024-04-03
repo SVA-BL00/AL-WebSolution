@@ -1,8 +1,19 @@
 {% extends "base.html" %}
 {% block content %}
 <div class="background">
-    <div id="viewer">
-        
+    <div id="viewer" class="viewer">
+        <span class="material-symbols-outlined" id="right" onclick="move('right')">
+            keyboard_arrow_right
+        </span>
+        <span class="material-symbols-outlined" id="left" onclick="move('left')">
+            keyboard_arrow_left
+        </span>
+        <span class="material-symbols-outlined" id="up" onclick="move('up')">
+            keyboard_arrow_up
+        </span>
+        <span class="material-symbols-outlined" id="down" onclick="move('down')">
+            keyboard_arrow_down
+        </span>
     </div>
 </div>
 {% endblock %}

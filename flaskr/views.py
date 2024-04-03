@@ -59,3 +59,7 @@ def search():
         results = []
     
     return render_template("search_results.html", results=results)
+
+@views.route("/view")
+def view():
+    return render_template("view.html")

@@ -156,3 +156,31 @@ input:valid ~ label {
 }
 
 /* view */
+#viewer {
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+} #viewer img {
+    width: 100vw;
+    height: 100vh;
+} #viewer span {
+    position: absolute;
+    font-size: 60px;
+    background: rgba(255, 255, 255, 0.75);
+    border-radius: 50px;
+    user-select: none;
+} #viewer span:active {
+    opacity: 0.5;
+} #viewer #right {
+    margin-left: 95vw;
+    margin-top: 45vh;
+} #viewer #left {
+    margin-left: 0.5vw;
+    margin-top: 45vh;
+} #viewer #up {
+    margin-left: 48.5vw;
+    margin-top: 1vh;
+} #viewer #down {
+    margin-left: 48.5vw;
+    margin-top: 89vh;
+}
