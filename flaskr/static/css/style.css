@@ -156,9 +156,3 @@ input:valid ~ label {
 }
 
 /* streetView */
-.camera-box {
-    width: 729px;
-    height: 410px;
-    border: solid;
-    border-color: black;
-}
