@@ -18,7 +18,7 @@ function move(str) {
     console.log(str);
     if (route == 'Scene1.jpg' && str == 'right') {
         route = 'Scene2.jpg';
-        right.style.opacity = 0;
+        right.style.opacity = 1;
         left.style.opacity = 0;
         up.style.opacity = 1;
         down.style.opacity = 0;
