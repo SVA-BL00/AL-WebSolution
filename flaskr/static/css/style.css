@@ -221,6 +221,20 @@ thead {
     margin-top: 150px;
     opacity: 0;
 }
+
+.minimap {
+    width: 200px; 
+    height: auto; 
+}
+
+.minimap-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 59vh;
+}
+
+
 /* transform: rotate(45deg); */
 
 .alert-error {
