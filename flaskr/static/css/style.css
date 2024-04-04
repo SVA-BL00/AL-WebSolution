@@ -286,6 +286,55 @@ thead {
 }
 /* transform: rotate(45deg); */
 
+/* upload */
+.left-box {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: rgba(0, 0, 255, 0.5);
+    min-width: 50vw;
+    min-height: 100vh;
+} .upload-img {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.5);
+    font-size: large;
+
+    border: dashed rgba(0, 0, 0, 0.5) 2px;
+    border-radius: 20px;
+    width: 400px;
+    height: 400px;
+    margin-top: 10%;
+    margin-left: 10%;
+} #example-person {
+    position: absolute;
+    font-size: 60px;
+    background: rgba(190, 118, 118, 0.75);
+    border-radius: 50px;
+    user-select: none;
+    margin-left: 10%;
+    margin-top: 20px;
+} #example-arrow {
+    position: absolute;
+    font-size: 60px;
+    background: rgba(255, 255, 255, 0.75);
+    border-radius: 50px;
+    user-select: none;
+    margin-left: 25%;
+    margin-top: 20px;
+} .button {
+    position: absolute;
+    line-height: 60px;
+    padding-left: 10px;
+    padding-right: 10px;
+    font-size: 24px;
+    background: rgba(255, 255, 255, 0.75);
+    border-radius: 50px;
+    user-select: none;
+    margin-left: 45%;
+    margin-top: 20px;
 .everything{
     position: relative;
 }
