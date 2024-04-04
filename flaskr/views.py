@@ -60,6 +60,6 @@ def search():
     
     return render_template("search_results.html", results=results)
 
-@views.route("/view")
-def view():
-    return render_template("view.html")
+@views.route("/nav")
+def nav():
+    return render_template("nav.html")
