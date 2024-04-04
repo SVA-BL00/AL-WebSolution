@@ -21,7 +21,7 @@ def loginPOST():
     conn = get_db_connection()
     if not conn:
         flash("Failed to connect to database", 'error')
-        return redirect(url_for('loginGET'))
+        return redirect(url_for('views.loginGET'))
 
     try:
         cursor = conn.cursor()
