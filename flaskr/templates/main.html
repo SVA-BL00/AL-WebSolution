@@ -1,25 +1,96 @@
 {% extends "base.html"%}
 {% block content%}
-<div class="sidenav" id="sidenav">
-    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-    <div class="input">
-        <span class="material-symbols-outlined">
-            search
+<div class="everything">
+    <div class="background">
+        <div id="viewer" class="viewer">
+            <span class="material-symbols-outlined" id="right" onclick="move('right')">
+                keyboard_arrow_right
+            </span>
+            <span class="material-symbols-outlined" id="left" onclick="move('left')">
+                keyboard_arrow_left
+            </span>
+            <span class="material-symbols-outlined" id="up" onclick="move('up')">
+                keyboard_arrow_up
+            </span>
+            <span class="material-symbols-outlined" id="down" onclick="move('down')">
+                keyboard_arrow_down
+            </span>
+        </div>
+        <span class="material-symbols-outlined" id="maria" onclick="">
+            person
         </span>
-        <input class = "extra" type="text" placeholder="¿Qué área estás buscando?" name="q" hx-get="/search" hx-trigger="keyup changed delay:500ms" hx-target="#results">
+        <table>
+            <thead>
+                <tr>
+                    <th>María</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Rol</td>
+                    <td>Manager de Finanzas</td>
+                </tr>
+                <tr>
+                    <td>Oficina</td>
+                    <td>Link</td>
+                </tr>
+                <tr>
+                    <td>Lider de:</td>
+                    <td>Proyecto1</td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>Proyecto 2</td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>Proyecto 3</td>
+                </tr>
+            </tbody>
+            <thead>
+                <tr>
+                    <th>Método</th>
+                    <th>Contacto</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Whatsapp</td>
+                    <td>+52 0000 0000</td>
+                </tr>
+                <tr>
+                    <td>Telegram</td>
+                    <td>Link</td>
+                </tr>
+                <tr>
+                    <td>Correo</td>
+                    <td>norberto@aztrnca.mx</td>
+                </tr>
+            </tbody>
+        </table>
     </div>
-    <table class="tabla-ubi">
-        <thead>
-            <tr>
-                <th>Nombre de área</th>
-            </tr>
-        </thead>
-        <tbody id="results">
-
-        </tbody>
-    </table>
+    <div class="sidenav" id="sidenav">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+        <div class="input">
+            <span class="material-symbols-outlined">
+                search
+            </span>
+            <input class = "extra" type="text" placeholder="¿Qué área estás buscando?" name="q" hx-get="/search" hx-trigger="keyup changed delay:500ms" hx-target="#results">
+        </div>
+        <table class="tabla-ubi">
+            <thead>
+                <tr>
+                    <th>Nombre de área</th>
+                </tr>
+            </thead>
+            <tbody id="results">
+    
+            </tbody>
+        </table>
+    </div>
+    <span onclick="openNav()" class="material-symbols-outlined hamburger" style="z-index: 2;">Menu</span>
+    
+    <h1 class="title-page">Área 1</h1>
 </div>
-<span onclick="openNav()" class="material-symbols-outlined hamburger">Menu</span>
-
-<h1 class="title-page">Nombre de ubicación</h1>
 {% endblock %}

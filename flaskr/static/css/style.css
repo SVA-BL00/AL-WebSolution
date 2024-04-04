@@ -106,12 +106,17 @@ input:valid ~ label {
     background: linear-gradient(50deg, #a0eaf2, #796fe2);
     animation: Gradient 30s ease infinite;
     display: flex;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    width: 100%;
     background-position: center;
     background-size: cover;
+    z-index: -1;
 }
 
 @keyframes Gradient {
@@ -185,7 +190,7 @@ input:valid ~ label {
     margin-top: 45vh;
 } #viewer #up {
     margin-left: 48.5vw;
-    margin-top: 1vh;
+    margin-top: 60vh;
 } #viewer #down {
     margin-left: 48.5vw;
     margin-top: 89vh;
@@ -280,3 +285,7 @@ thead {
     opacity: 0;
 }
 /* transform: rotate(45deg); */
+
+.everything{
+    position: relative;
+}
