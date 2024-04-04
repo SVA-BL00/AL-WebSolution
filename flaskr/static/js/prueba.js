@@ -23,8 +23,8 @@ function move(str) {
     console.log(str);
     if (route == 'Scene1.jpg' && str == 'right') {
         route = 'Scene2.jpg';
-        right.style.opacity = 1;
-        left.style.opacity = 0;
+        right.style.opacity = 0;
+        left.style.opacity = 1;
         up.style.opacity = 0;
         down.style.opacity = 0;
         maria.style.opacity = 1;
@@ -33,7 +33,7 @@ function move(str) {
         right.style.opacity = 1;
         left.style.opacity = 0;
         up.style.opacity = 0;
-        down.style.opacity = 0;
+        down.style.opacity = 1;
         maria.style.opacity = 0;
     } else if (route == 'Scene2.jpg' && str == 'right') {
         route = 'Scene1.jpg';
@@ -42,20 +42,50 @@ function move(str) {
         up.style.opacity = 0;
         down.style.opacity = 0;
         maria.style.opacity = 0;
+    } else if (route == 'Scene2.jpg' && str == 'left') {
+        route = 'Scene3.jpg';
+        right.style.opacity = 1;
+        left.style.opacity = 0;
+        up.style.opacity = 0;
+        down.style.opacity = 1;
+        maria.style.opacity = 0;
     } else if (route == 'Scene3.jpg' && str == 'right') {
         route = 'Scene4.jpg';
         right.style.opacity = 1;
-        left.style.opacity = 0;
+        left.style.opacity = 1;
         up.style.opacity = 0;
         down.style.opacity = 0;
         maria.style.opacity = 0;
     } else if (route == 'Scene3.jpg' && str == 'down') {
         route = 'Scene1.jpg';
         right.style.opacity = 1;
-        left.style.opacity = 0;
+        left.style.opacity = 1;
         up.style.opacity = 0;
         down.style.opacity = 0;
         maria.style.opacity = 0;
+    } else if (route == 'Scene4.jpg' && str == 'left') {
+        route = 'Scene3.jpg';
+        right.style.opacity = 1;
+        left.style.opacity = 0;
+        up.style.opacity = 0;
+        down.style.opacity = 1;
+        maria.style.opacity = 0;
+    } else if (route == 'Scene4.jpg' && str == 'right') {
+        route = 'Scene5.jpg';
+        right.style.opacity = 0;
+        left.style.opacity = 1;
+        up.style.opacity = 0;
+        down.style.opacity = 0;
+        maria.style.opacity = 0;
+    } else if (route == 'Scene5.jpg' && str == 'left') {
+        route = 'Scene4.jpg';
+        right.style.opacity = 1;
+        left.style.opacity = 1;
+        up.style.opacity = 0;
+        down.style.opacity = 0;
+        maria.style.opacity = 0;
+    } else {
+        console.log('No se puede mover');
     }
     imagen.src = "../static/img/" + route;
 }
