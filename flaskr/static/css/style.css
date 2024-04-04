@@ -154,3 +154,10 @@ input:valid ~ label {
     padding: 0 35px 0 5px;
     font-family: "Rubik", sans-serif;
 }
+
+.alert-error {
+    color: red;
+    font-size: 1em;
+    text-align: center;
+    margin-top: 20px;
+}

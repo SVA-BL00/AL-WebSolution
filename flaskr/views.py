@@ -4,8 +4,18 @@ from .db import get_db_connection
 
 views = Blueprint('views', __name__)
 
+def login_required(view):
+    @functools.wraps(view)
+    def wrapped_view(**kwargs):
+        if 'USER_ID' not in session:
+            return redirect(url_for('views.loginGET'))
+
+        return view(**kwargs)
+
+    return wrapped_view
 
 @views.route('/')
+@login_required
 def home():
     return render_template("main.html")
 

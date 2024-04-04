@@ -5,17 +5,6 @@
         <div class="form-box">
             <img src="../static/img/LOGO.png" alt="Logotipo de Augmented Labs" class= "LOGIN-style">
             <div class="form-value">
-                <!-- Display flash messages -->
-                {% with messages = get_flashed_messages(with_categories=true) %}
-                    {% if messages %}
-                        {% for category, message in messages %}
-                            <div class="alert alert-{{ category }}">
-                                {{ message }}
-                            </div>
-                        {% endfor %}
-                    {% endif %}
-                {% endwith %}
-
                 <!-- Login form -->
                 <form method="POST">
                     <div class="input">
@@ -35,6 +24,16 @@
                     <div class="submit">
                         <button type="submit">Iniciar sesión</button>
                     </div>
+                    <!-- Display flash messages -->
+                    {% with messages = get_flashed_messages(with_categories=true) %}
+                    {% if messages %}
+                        {% for category, message in messages %}
+                            <div class="alert alert-{{ category }}">
+                                {{ message }}
+                            </div>
+                        {% endfor %}
+                    {% endif %}
+                {% endwith %}
                 </form>
             </div>
         </div>
