@@ -106,12 +106,17 @@ input:valid ~ label {
     background: linear-gradient(50deg, #a0eaf2, #796fe2);
     animation: Gradient 30s ease infinite;
     display: flex;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    width: 100%;
     background-position: center;
     background-size: cover;
+    z-index: -1;
 }
 
 @keyframes Gradient {
@@ -155,6 +160,75 @@ input:valid ~ label {
     font-family: "Rubik", sans-serif;
 }
 
+.alert-error {
+    color: red;
+    font-size: 1em;
+    text-align: center;
+    margin-top: 20px;
+}
+/* view */
+#viewer {
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+} #viewer img {
+    width: 100vw;
+    height: 100vh;
+} #viewer span {
+    position: absolute;
+    font-size: 60px;
+    background: rgba(255, 255, 255, 0.75);
+    border-radius: 50px;
+    user-select: none;
+} #viewer span:active {
+    opacity: 0.5;
+} #viewer #right {
+    margin-left: 95vw;
+    margin-top: 45vh;
+} #viewer #left {
+    margin-left: 0.5vw;
+    margin-top: 45vh;
+} #viewer #up {
+    margin-left: 48.5vw;
+    margin-top: 60vh;
+} #viewer #down {
+    margin-left: 48.5vw;
+    margin-top: 89vh;
+}
+
+#maria {
+    position: absolute;
+    font-size: 60px;
+    background: rgba(190, 118, 118, 0.75);
+    border-radius: 50px;
+    user-select: none;
+    margin-left: 30px;
+    margin-bottom: 20px;
+} #maria:hover ~ table {
+    opacity: 1;
+}
+
+thead {
+    background-color: rgb(123, 144, 207);
+} tbody {
+    background-color: rgb(34, 34, 34);
+    color: white;
+} table {
+    border: 1px solid black;
+    border-collapse: collapse;
+    position: absolute;
+    margin-left: 350px;
+    margin-top: 150px;
+    opacity: 0;
+}
+/* transform: rotate(45deg); */
+
+.alert-error {
+    color: red;
+    font-size: 1em;
+    text-align: center;
+    margin-top: 20px;
+}
 /* view */
 #viewer {
     width: 100vw;
@@ -261,4 +335,6 @@ thead {
     user-select: none;
     margin-left: 45%;
     margin-top: 20px;
+.everything{
+    position: relative;
 }
