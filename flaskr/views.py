@@ -63,3 +63,7 @@ def search():
 @views.route("/view")
 def view():
     return render_template("view.html")
+
+@views.route("/upload")
+def upload():
+    return render_template("upload.html")
